@@ -135,7 +135,7 @@ function Hero() {
   	 </a>
 
   	<a
-    	  href="/resume.pdf"
+    	  href={`${import.meta.env.BASE_URL}resume.pdf`}
     	  download
     	  className="
     	  px-8
