@@ -115,7 +115,7 @@ Error generating stack: `+e.message+`
     	  transition
     	  font-semibold
     	  inline-block
-    	  `,children:`View Projects`}),(0,U.jsx)(`a`,{href:`/resume.pdf`,download:!0,className:`
+    	  `,children:`View Projects`}),(0,U.jsx)(`a`,{href:`/Harshitha-DevOps-Portfolio/resume.pdf`,download:!0,className:`
     	  px-8
     	  py-4
     	  rounded-xl
