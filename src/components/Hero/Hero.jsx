@@ -3,7 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 
 function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center px-6 pt-24 md:pt-20 relative overflow-hidden">
 	<div
   	className="
   	absolute

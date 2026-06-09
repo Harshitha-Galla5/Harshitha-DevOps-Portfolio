@@ -1,6 +1,9 @@
-import { FaGithub } from "react-icons/fa";
+import { useState } from "react";
+import { FaGithub, FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
+const [menuOpen, setMenuOpen] = useState(false);
+
 return ( <nav
    className="
    fixed
@@ -17,70 +20,60 @@ return ( <nav
      max-w-7xl
      mx-auto
      px-6
-     py-4
+     py-3
      flex
-     flex-wrap
      justify-between
      items-center
-     gap-4
      "
-   >
-    <h1
-      className="
-      text-xl
-      md:text-2xl
-      font-bold
-      text-blue-500
-      "
+   > <h1
+       className="
+       text-lg
+       md:text-xl
+       font-bold
+       text-blue-500
+       "
+     >
+Harshitha@DevOps </h1>
+
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="md:hidden text-xl"
     >
-      Harshitha DevOps
-    </h1>
+      {menuOpen ? <FaTimes /> : <FaBars />}
+    </button>
 
     <div
       className="
-      flex
-      flex-wrap
+      hidden
+      md:flex
       items-center
-      gap-6
+      gap-5
       text-sm
-      md:text-base
       "
     >
-
-      <a
-        href="#dashboard"
-        className="hover:text-blue-400 transition"
-      >
+      <a href="#dashboard" className="hover:text-blue-400 transition">
         Dashboard
       </a>
 
-      <a
-        href="#skills"
-        className="hover:text-blue-400 transition"
-      >
+      <a href="#skills" className="hover:text-blue-400 transition">
         Skills
       </a>
 
-      <a
-        href="#projects"
-        className="hover:text-blue-400 transition"
-      >
+      <a href="#projects" className="hover:text-blue-400 transition">
         Projects
       </a>
 
-      <a
-        href="#contact"
-        className="hover:text-blue-400 transition"
-      >
+      <a href="#contact" className="hover:text-blue-400 transition">
         Contact
       </a>
 
       <a
-        href="/resume.pdf"
-        download
+        href={`${import.meta.env.BASE_URL}resume.pdf`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="
-        px-4
-        py-2
+        px-3
+        py-1.5
         rounded-lg
         border
         border-slate-700
@@ -99,8 +92,8 @@ return ( <nav
         flex
         items-center
         gap-2
-        px-4
-        py-2
+        px-3
+        py-1.5
         rounded-lg
         bg-blue-600
         hover:bg-blue-700
@@ -110,10 +103,56 @@ return ( <nav
         <FaGithub />
         GitHub
       </a>
-
     </div>
-
   </div>
+
+  {menuOpen && (
+    <div
+      className="
+      md:hidden
+      bg-slate-950
+      border-t
+      border-slate-800
+      px-6
+      py-4
+      flex
+      flex-col
+      gap-4
+      "
+    >
+      <a href="#dashboard" onClick={() => setMenuOpen(false)}>
+        Dashboard
+      </a>
+
+      <a href="#skills" onClick={() => setMenuOpen(false)}>
+        Skills
+      </a>
+
+      <a href="#projects" onClick={() => setMenuOpen(false)}>
+        Projects
+      </a>
+
+      <a href="#contact" onClick={() => setMenuOpen(false)}>
+        Contact
+      </a>
+
+      <a
+        href={`${import.meta.env.BASE_URL}resume.pdf`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Resume
+      </a>
+
+      <a
+        href="https://github.com/Harshitha-Galla5"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  )}
 </nav>
 
 );
